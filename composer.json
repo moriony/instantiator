@@ -1,0 +1,21 @@
+{
+    "name" : "moriony/instantiator",
+    "keywords": ["instantiator", "constructor"],
+    "homepage": "https://github.com/moriony/instantiator",
+    "type": "library",
+    "license":  "MIT",
+    "require": {
+        "php": ">=5.3"
+    },
+    "authors": [
+        {
+            "name": "Vitaliy Chesnokov",
+            "email": "demateus@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-0": {
+            "Moriony": "src/"
+        }
+    }
+}
