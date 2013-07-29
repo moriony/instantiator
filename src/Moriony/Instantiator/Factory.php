@@ -17,6 +17,16 @@ class Factory
         $this->decorator = $decorator;
     }
 
+    public function getConstructor()
+    {
+        return $this->constructor;
+    }
+
+    public function getDecorator()
+    {
+        return $this->decorator;
+    }
+
     public function create($className, $args = array())
     {
         $className = $this->decorator->decorate($className);
