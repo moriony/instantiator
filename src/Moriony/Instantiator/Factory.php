@@ -5,7 +5,7 @@ namespace Moriony\Instantiator;
 use Moriony\Instantiator\ClassName\Decorator\DecoratorInterface;
 use Moriony\Instantiator\Constructor\ConstructorInterface;
 
-class InstancePool
+class Factory
 {
     protected $constructor;
     protected $decorator;
@@ -17,12 +17,9 @@ class InstancePool
         $this->decorator = $decorator;
     }
 
-    public function get($className, $args = array())
+    public function create($className, $args = array())
     {
         $className = $this->decorator->decorate($className);
-        if(!array_key_exists($className, $this->objects)) {
-            $this->objects[$className] = $this->constructor->create($className, $args);
-        }
-        return $this->objects[$className];
+        return $this->constructor->create($className, $args);
     }
 }

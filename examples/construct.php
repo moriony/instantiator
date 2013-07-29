@@ -2,13 +2,13 @@
 
 require_once "../vendor/autoload.php";
 
-use Moriony\Instantiator\InstancePool;
+use Moriony\Instantiator\Factory;
 use Moriony\Instantiator\Constructor\Base;
 use Moriony\Instantiator\ClassName\Decorator\NamespaceDecorator;
 
-$instantiator = new InstancePool(new Base, new NamespaceDecorator('Moriony\Instantiator'));
+$instantiator = new Factory(new Base, new NamespaceDecorator('Moriony\Instantiator'));
 
-var_dump($instantiator->get('ClassName\Decorator\NoneDecorator'));
+var_dump($instantiator->create('ClassName\Decorator\NoneDecorator'));
 
 
 
