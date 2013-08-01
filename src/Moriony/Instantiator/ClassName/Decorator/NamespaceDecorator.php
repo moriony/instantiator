@@ -12,9 +12,9 @@ class NamespaceDecorator implements DecoratorInterface
     }
 
     protected function filter($string)
-    {
-        return trim($string, " \\");
-    }
+{
+    return trim($string, " \\");
+}
 
     public function decorate($className)
     {
