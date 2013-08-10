@@ -21,7 +21,7 @@ $constructroStack = new ConstructionStack(array(
     new StaticCall('getInstance'),
 ));
 
-$instantiator = new Factory($constructrStack, new NoneDecorator);
+$instantiator = new Factory($constructorStack, new NoneDecorator);
 
 var_dump($instantiator->create('Example'));
 
