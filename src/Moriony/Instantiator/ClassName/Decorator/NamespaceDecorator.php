@@ -2,7 +2,7 @@
 
 namespace Moriony\Instantiator\ClassName\Decorator;
 
-class NamespaceDecorator implements DecoratorInterface
+class NamespaceDecorator extends AbstractDecorator implements DecoratorInterface
 {
     protected $namespace;
 
@@ -10,11 +10,6 @@ class NamespaceDecorator implements DecoratorInterface
     {
         $this->namespace = $this->filter($namespace);
     }
-
-    protected function filter($string)
-{
-    return trim($string, " \\");
-}
 
     public function decorate($className)
     {
