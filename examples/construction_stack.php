@@ -16,7 +16,7 @@ class Example
     }
 }
 
-$constructroStack = new ConstructionStack(array(
+$constructorStack = new ConstructionStack(array(
     new StaticCall('invalidMethod'),
     new StaticCall('getInstance'),
 ));

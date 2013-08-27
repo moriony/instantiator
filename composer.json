@@ -1,11 +1,15 @@
 {
     "name" : "moriony/instantiator",
-    "keywords": ["instantiator", "constructor", "universal factory"],
+    "keywords": ["instantiator", "constructor", "factory", "universal factory"],
     "homepage": "https://github.com/moriony/instantiator",
     "type": "library",
     "license":  "MIT",
     "require": {
         "php": ">=5.3"
+    },
+    "require-dev": {
+        "satooshi/php-coveralls": "*",
+        "phpunit/phpunit": "*"
     },
     "authors": [
         {
