@@ -12,6 +12,10 @@
          bootstrap="vendor/autoload.php"
         >
 
+    <php>
+        <includePath>./tests/fixtures</includePath>
+    </php>
+
     <testsuites>
         <testsuite name="Instantiator Test Suite">
             <directory>./tests/</directory>
