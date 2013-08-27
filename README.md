@@ -1,0 +1,3 @@
+Instantiator
+============
+Universal PHP-factory
