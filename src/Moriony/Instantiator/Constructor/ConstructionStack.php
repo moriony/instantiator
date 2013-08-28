@@ -34,9 +34,6 @@ class ConstructionStack extends AbstractConstructor implements ConstructorInterf
     public function create($class, array $args = array())
     {
         return $this->onValidate($class, $args, function($constructor, $class, $args) {
-            /**
-             * @var ConstructorInterface $constructor
-             */
             return $constructor->create($class, $args);
         });
     }

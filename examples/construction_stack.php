@@ -11,7 +11,6 @@ class Example
 {
     public static function getInstance()
     {
-        echo 123;
         return new self;
     }
 }
