@@ -33,22 +33,29 @@ class ConstructionStack extends AbstractConstructor implements ConstructorInterf
 
     public function create($class, array $args = array())
     {
-        $this->validate($class, $args);
-        foreach ($this->stack as $constructor) {
-            if ($constructor->isConstructable($class, $args)) {
-                return $constructor->create($class, $args);
-            }
-        }
+        return $this->onValidate($class, $args, function($constructor, $class, $args) {
+            /**
+             * @var ConstructorInterface $constructor
+             */
+            return $constructor->create($class, $args);
+        });
     }
 
     public function validate($class, array $args = array())
+    {
+        return $this->onValidate($class, $args, function() {
+            return true;
+        });
+    }
+
+    protected function onValidate($class, array $args = array(), \Closure $callback)
     {
         if (!$this->stack) {
             throw new EmptyConstructorStack;
         }
         foreach ($this->stack as $constructor) {
             if ($constructor->isConstructable($class, $args)) {
-                return true;
+                return $callback($constructor, $class, $args);
             }
         }
         throw new UnconstructableClass(sprintf("Can't construct object of %s with current construction stack", $class));

@@ -1,13 +1,10 @@
 <?php
-namespace Moriony\Instantiator\ClassName\Decorator;
-
-use Moriony\Instantiator\Constructor\Base;
-use Moriony\Instantiator\Constructor\StaticCall;
+namespace Moriony\Instantiator\Constructor;
 
 class StaticCallTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Base
+     * @var StaticCall
      */
     protected $constructor;
 

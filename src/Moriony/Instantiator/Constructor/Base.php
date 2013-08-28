@@ -11,6 +11,7 @@ class Base extends AbstractConstructor implements ConstructorInterface
 {
     public function create($class, array $args = array())
     {
+        $this->validate($class, $args);
         $reflection = new \ReflectionClass($class);
         if ($reflection->getConstructor()) {
             $object = $reflection->newInstanceArgs($args);

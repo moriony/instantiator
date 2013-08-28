@@ -1,7 +1,6 @@
 <?php
-namespace Moriony\Instantiator\ClassName\Decorator;
+namespace Moriony\Instantiator\Constructor;
 
-use Moriony\Instantiator\Constructor\AbstractConstructor;
 use Moriony\Instantiator\Constructor\Exception\Basic;
 
 class AbstractConstructorTest extends \PHPUnit_Framework_TestCase

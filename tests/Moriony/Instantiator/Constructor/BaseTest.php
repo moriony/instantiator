@@ -1,7 +1,5 @@
 <?php
-namespace Moriony\Instantiator\ClassName\Decorator;
-
-use Moriony\Instantiator\Constructor\Base;
+namespace Moriony\Instantiator\Constructor;
 
 class BaseTest extends \PHPUnit_Framework_TestCase
 {
